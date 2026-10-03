@@ -4,12 +4,12 @@
   "description": "API gateway that exposes Claude as an internal service with auth, rate limiting, caching and model routing",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.9"
   },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts",
+    "start": "node --env-file-if-exists=.env dist/index.js",
+    "dev": "tsx watch --env-file-if-exists=.env src/index.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },
